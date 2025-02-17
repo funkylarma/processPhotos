@@ -1,0 +1,6 @@
+name: 'Bookmark Feeds to Markdown'
+description: 'Converts the ATOM feed from PixelFed to Markdown files'
+author: 'Adam Chamberlin'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
