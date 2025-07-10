@@ -58235,7 +58235,8 @@ const generateFeedMarkdown = ( template, entry ) => {
   
   // Get the movie title
   let title = entry.title?.[ 0 ];
-  
+  title = title.split("\n");
+  title = title[0];
   
   // Extract and clean up content for Markdown conversion and description
   const content = entry.content?.[ 0 ]?._ || '';
@@ -58328,6 +58329,7 @@ function saveMarkdown ( date, title, markdown ) {
 }
 
 function slugify ( str ) {
+  str = str.substring(0, 20); // Trim to only 20 characters
   str = str.replace( /^\s+|\s+$/g, '' ); // trim leading/trailing white space
   str = str.toLowerCase( ); // convert string to lowercase
   str = str
